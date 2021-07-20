@@ -16,10 +16,14 @@ const deleteToDo = (targetId) => {
   };
 };
 
+export const actionCreator = { addToDo, deleteToDo };
+
 const reducer = (toDos = [], action) => {
+  console.log(toDos, action);
   switch (action.type) {
     case ADD:
-      return [{ text: action.text, id: Date.now() }, ...toDos];
+      const newToDoObj = { text: action.text, id: Date.now() };
+      return [newToDoObj, ...toDos];
     case DELETE:
       return toDos.filter((toDo) => toDo.id !== action.targetId);
     default:

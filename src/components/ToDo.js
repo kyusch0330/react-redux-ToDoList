@@ -12,9 +12,6 @@ function ToDo({ text, id, deleteToDo }) {
   );
 }
 
-// mapStateToProps는 필요하지 않음
-// -> state에서 props로 전달할 것 없음 의미(혹은 state를 이용해서 전달할 것 없음)
-
 //store의 dispatch와 ToDo컴포넌트로 전달되는 props인 ownProps를 인자로
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {

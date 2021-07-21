@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { actionCreator } from "../store";
+import { remove } from "../store";
 
 function ToDo({ text, id, deleteToDo }) {
   return (
@@ -19,7 +19,8 @@ function ToDo({ text, id, deleteToDo }) {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     //Home에서 ToDo 컴포넌트로 전달해준 id를 이용해 삭제 action을 인자로하는 dispatch 함수 작성
-    deleteToDo: () => dispatch(actionCreator.deleteToDo(ownProps.id)),
+    //acionCreator인 deleteToDo에 payload로 id를 전달
+    deleteToDo: () => dispatch(remove(ownProps.id)),
   };
 };
 

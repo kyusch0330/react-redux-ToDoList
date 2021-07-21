@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { actionCreator } from "../store";
+import { add } from "../store";
 import ToDo from "../components/ToDo";
 /*
   react-redux의 connect()를 통해서 toDos(state)와 addToDo(dispatch)를 props로 전달받음
+  (컴포넌트가 store의 state와 함수를 전달받을 수 있음)
 */
 function Home({ toDos, addToDo }) {
   const [toDoText, setToDoText] = useState("");
@@ -47,7 +48,8 @@ const mapStateToProps = (state, ownProps) => {
 // 각기 다른 action을 처리하는 dispatch들을 만들어 전해줄 수 있다.
 // -> 컴포넌트에서 직접 action을 생성하고 dispatch 하지 않아도 되게 된다.
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return { addToDo: (text) => dispatch(actionCreator.addToDo(text)) };
+  //actionCreator인 addToDo에 payload로 text를 전달
+  return { addToDo: (text) => dispatch(add(text)) };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

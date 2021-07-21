@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { actionCreator } from "../store";
+import { remove } from "../store";
 
 // react-router의 Link를 통해 렌더링되는 컴포넌트
 
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     deleteToDo: () => {
-      dispatch(actionCreator.deleteToDo(parseInt(id)));
+      dispatch(remove(parseInt(id)));
       ownProps.history.push("/");
     },
   };

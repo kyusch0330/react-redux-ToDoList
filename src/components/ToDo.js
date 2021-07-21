@@ -2,12 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { remove } from "../store";
+import "./ToDo.scss";
 
 function ToDo({ text, id, deleteToDo }) {
   return (
     <li>
       <Link to={`/detail/${id}`}>{text}</Link>
-      <button onClick={deleteToDo}>Delete</button>
+      <button onClick={deleteToDo}>X</button>
     </li>
   );
 }

@@ -7,7 +7,7 @@ const toDos = createSlice({
   initialState: JSON.parse(localStorage.getItem("TODOS")),
   reducers: {
     add: (state, action) => {
-      state.push({ text: action.payload, id: Date.now() });
+      state.unshift({ text: action.payload, id: Date.now() });
       localStorage.setItem("TODOS", JSON.stringify(state));
     },
     remove: (state, action) => {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { add } from "../store";
 import ToDo from "../components/ToDo";
+import "./Home.scss";
 
 function Home({ toDos, addToDo }) {
   const [toDoText, setToDoText] = useState("");
@@ -18,11 +19,18 @@ function Home({ toDos, addToDo }) {
   };
 
   return (
-    <div>
-      <h1>To Do</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={toDoText} onChange={handleChange} />
-        <input type="submit" value="add" />
+    <div className="homeContainer">
+      <div className="header">
+        <h1>To Do List</h1>
+      </div>
+      <form className="toDoForm" onSubmit={handleSubmit}>
+        <input
+          className="toDoInput"
+          type="text"
+          value={toDoText}
+          onChange={handleChange}
+        />
+        <input className="addBtn" type="submit" value="add" />
       </form>
       <ul>
         {toDos.map((toDo) => (

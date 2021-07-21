@@ -1,0 +1,65 @@
+$main_color: #418e6f;
+$black: #202020;
+$gray: #808080;
+$white: #eeeeee;
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .header {
+    width: 100%;
+    background-color: $main_color;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    box-shadow: $gray 2px 1px 16px 4px;
+
+    h1 {
+      color: $white;
+    }
+
+    // &:hover {
+    //   background-color: darken($blue, 10%);
+    // }
+  }
+
+  .toDoForm {
+    width: 50%;
+    max-width: 400px;
+    height: 4rem;
+    border-radius: 10px;
+    box-shadow: $gray 2px 4px 16px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: $main_color;
+
+    .toDoInput {
+      border: 1px solid $black;
+      font-size: 1.2rem;
+    }
+
+    .addBtn {
+      all: unset;
+      appearance: none;
+      color: $white;
+      background-color: $black;
+      border-radius: 3px;
+      padding: 0.1rem 0.4rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  ul {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
